@@ -18,7 +18,7 @@ const Navitems = () => {
   return (
     <header
       className={
-        `header-sction style-3 ${headerFixed ? "header-fixed fadeInUp" : ""}`
+        `header-section style-4 ${headerFixed ? "header-fixed fadeInUp" : ""}`
       }
     >
       <div className={`header-top d-md-none ${socialToggle ? "open" : ""}`}>
