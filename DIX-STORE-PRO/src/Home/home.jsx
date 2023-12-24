@@ -3,6 +3,7 @@ import Banner from './Banner'
 import HomeCategory from './HomeCategory'
 import CategoryShowCase from './CategoryShowCase'
 import RegisterSec from './RegisterSec'
+import LocationFind from './LocationFind'
 
 const home = () => {
   return (
@@ -12,6 +13,7 @@ const home = () => {
       <HomeCategory/>
       <CategoryShowCase/>
       <RegisterSec/>
+      <LocationFind/>
     </div></>
   )
 }
