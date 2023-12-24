@@ -4,6 +4,9 @@ import HomeCategory from './HomeCategory'
 import CategoryShowCase from './CategoryShowCase'
 import RegisterSec from './RegisterSec'
 import LocationFind from './LocationFind'
+import About from './About'
+import AppSection from './AppSection'
+import Sponsor from './Sponsor'
 
 const home = () => {
   return (
@@ -14,6 +17,9 @@ const home = () => {
       <CategoryShowCase/>
       <RegisterSec/>
       <LocationFind/>
+      <About/>
+      <AppSection/>
+      <Sponsor/>
     </div></>
   )
 }
