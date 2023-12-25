@@ -17,13 +17,15 @@ import "././assets/css/style.min.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Blog from "./Blog/Blog.jsx";
+import Shop from './shop/Shop.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [{ path: "/", element: <Home /> },
-               {path: "/Blog", element: <Blog/>}
+               {path: "/Blog", element: <Blog/>},
+               {path: "/shop", element: <Shop/>}
   ],
   },
 ]);

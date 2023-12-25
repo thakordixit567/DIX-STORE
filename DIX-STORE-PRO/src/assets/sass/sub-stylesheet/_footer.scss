@@ -81,12 +81,12 @@ footer {
                                         @extend %flex;
                                         i {
                                             @extend %mr-10;
-                                            font-size: $fs-h4;
+                                            font-size: $fs-h6;
                                             @extend %twitter-color;
-                                            @include transform(translateY(10px));
+                                            @include transform(translateY(1px));
                                         }
                                         p {
-                                            width: calc(100% - 35px);
+                                            width: calc(10% - 3px);
                                             font-size: $fs-base;
                                             a {
                                                 @extend %theme-color;

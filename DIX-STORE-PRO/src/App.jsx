@@ -2,6 +2,7 @@
 import { Outlet } from 'react-router-dom'
 import './App.css'
 import Navitems from './Components/Navitems.jsx'
+import Footer from './Components/Footer'
 
 function App() {
  
@@ -10,7 +11,7 @@ function App() {
     <>
       <Navitems/>
       <Outlet/>
-      
+      <Footer/>
     </>
   )
 }

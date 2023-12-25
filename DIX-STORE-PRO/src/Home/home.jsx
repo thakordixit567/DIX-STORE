@@ -20,6 +20,7 @@ const home = () => {
       <About/>
       <AppSection/>
       <Sponsor/>
+      
     </div></>
   )
 }
