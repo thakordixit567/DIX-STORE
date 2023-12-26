@@ -32,6 +32,12 @@ const search = ({ product, Gridlist }) => {
                      <img src={product.img} alt="" width={70} className="flex-{grow|shrink}-0"/>
                   </div>
                 </div>
+                 <div className="product-content">
+                  <p>
+                    <Link to={`/shop/${product.id}`}>{product.name}</Link>
+                  </p>
+                  <h6>₹{product.price}</h6>
+                 </div>
               </div>
             </Link>
           ))
