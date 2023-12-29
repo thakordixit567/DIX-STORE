@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const ProductDispaly = ({item}) => {
     //console.log(item);
     const desc = "In ecommerce, specifically, they're the blurbs of text on product pages that tell customers about your product. A good product description describes your product's features and benefits."
-    const {name, id ,price, seller,ratingsCount, quantity} = item;
+    const {name, id ,price, seller,ratingsCount, quantity, img} = item;
     const [prequantity, setQuantity] = useState(quantity);
     const[coupon,setCoupon] = useState("");
     const[size,setSize] = useState("Select Size");
@@ -15,7 +16,33 @@ const ProductDispaly = ({item}) => {
     const handleColorChange = (e) => {
         setColor(e.target.value);
     }
+
+    const handleDecrese = () => {
+         if(prequantity > 1){
+            setQuantity(prequantity - 1 )
+         }
+    }
+
+    const handleIncrease = () => {
+       setQuantity(prequantity + 1 )
+    }
     
+    const handleSubmit = (e) => {
+         e.preventDefault();  
+         const product = {
+            id: id,
+            img: img,
+            name: name,
+            price: price,
+            size : size,
+            color: color,
+            coupon : coupon
+         }      
+         
+         const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+         const existinProductIndex = existingCart.findIndex((item) => item.id === id);
+    }
   return (
     <div>
      <div>
@@ -34,7 +61,7 @@ const ProductDispaly = ({item}) => {
 
      </div>
      <div>
-        <form>
+        <form onSubmit={handleSubmit}>
               {/*For Size */}
             <div className="select-product size">
                 <select value={size} onChange={handleSizeChanged}>
@@ -64,10 +91,22 @@ const ProductDispaly = ({item}) => {
 
              {/*Cart Count */}
               <div className="cart-plus-minus">
-                <div className='dec qtybutton'>-</div>
-                <input className='cart-plus-minus-box' type="text" name='qtybutton' id='qtybutton' value={prequantity}/>
-                <div className='inc qtybutton'>+</div>
+                <div className='dec qtybutton' onClick={handleDecrese}>-</div>
+                <input className='cart-plus-minus-box' type="text" name='qtybutton' id='qtybutton' value={prequantity} 
+                 onChange={(e) => setQuantity(parseInt(e.target.value, 10))}/>
+                <div className='inc qtybutton' onClick={handleIncrease}>+</div>
               </div>
+
+              <div className="discount-code mb-2">
+                <input type="text" placeholder='Enter Coupon Code Here'onChange={(e) => setCoupon(e.target.value)}/>
+              </div>
+
+              <button type='submit' className='lab-btn'>
+                  <span>Add To Cart</span>
+              </button>
+              <Link to="/cart-page" className='lab-btn bg-primary'>
+                  <span>Check Out</span>
+              </Link>
         </form>
      </div>
     </div>
