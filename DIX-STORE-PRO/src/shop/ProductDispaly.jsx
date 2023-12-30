@@ -42,6 +42,19 @@ const ProductDispaly = ({item}) => {
          const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
 
          const existinProductIndex = existingCart.findIndex((item) => item.id === id);
+
+         if(existinProductIndex !== -1){
+            existingCart[existinProductIndex].quantity += prequantity;
+         }else{
+            existingCart.push(product);
+         }
+
+         localStorage.setItem("cart", JSON.stringify(existingCart));
+
+         setQuantity(1);
+         setSize("Select Size");
+         setColor("Choose Color");
+         setCoupon("");
     }
   return (
     <div>
