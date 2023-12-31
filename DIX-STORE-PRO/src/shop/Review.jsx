@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Ratting from "../Components/Ratting";
 
 const reviwtitle = "Add a Review";
+const descnew = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore asperiores perferendis impedit dolor totam eveniet eius? Corrupti facere enim fugit pariatur a, molestiae aliquid sunt delectus blanditiis nisi laborum magnam.";
 
 let ReviewList = [
   {
@@ -102,9 +103,13 @@ const Review = () => {
 
              </div>
 
-             <div className="description">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit unde quidem suscipit tempore qui facilis! Dignissimos inventore sint nisi facere suscipit a molestias! Exercitationem ex iste ab eligendi adipisci modi autem consectetur debitis? Non ut, omnis aliquid atque impedit, ipsum earum perspiciatis voluptates tempora ratione molestiae ex facilis, esse saepe.</p>
-         </div>
+             <div className="description"><p>{descnew}</p>
+               <div className="post-item">
+                <div className="post-thumb">
+                    <img src="./src/assets/images/shop/01.jpg" alt="" />
+                </div>
+               </div>
+             </div>
          </div>
          
          
