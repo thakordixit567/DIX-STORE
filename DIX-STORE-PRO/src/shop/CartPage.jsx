@@ -3,6 +3,7 @@ import PageHeader from "../Components/PageHeader";
 import { Link } from "react-router-dom";
 import delImgUrl from "../assets/images/shop/del.png";
 import Country from "../country.json";
+import CheckoutPage from "./CheckoutPage";
 
 const CartPage = () => {
   const [CartItems, setCartItems] = useState([]);
@@ -140,7 +141,9 @@ const CartPage = () => {
                 </form>
                 <form className="cart-checkout">
                   <input type="submit" value="Update Cart" />
-                  <div>CheckOutPage</div>
+                  <div>
+                    <CheckoutPage/>
+                  </div>
                 </form>
               </div>
               <div className="shiping-box">
@@ -960,8 +963,17 @@ const CartPage = () => {
                       <ul className="lab-ul">
                         <li>
                           <span className="pull-left">Cart Subtotal</span>
-                          <p className="pull-right">₹{cartSubtotal}</p>
+                          <p className="pull-right">₹ {cartSubtotal}</p>
                         </li>
+                        <li>
+                          <span className="pull-left">Shiping and Handling</span>
+                          <p className="pull-right">Free Shipping</p>
+                        </li>
+                        <li>
+                          <span className="pull-left">Order Total</span>
+                          <p className="pull-right">₹ {orderTotal.toFixed(2)}</p>
+                        </li>
+
                       </ul>
                     </div>
                   </div>
