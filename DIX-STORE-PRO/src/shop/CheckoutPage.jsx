@@ -85,9 +85,63 @@ const CheckoutPage = () => {
                   </li>
 
                 </ul>
+             
+                <div className="tab-content" id="myTabContent">
+                    {/*rupay content */}
+                    <div className={`tab-pane fade ${activeTab === "rupay" ? "show active" : ""}`}
+                    id="rupay"
+                    role="tabPanel"
+                    aria-labelledby="ruapy-tab"
+                    >
+                        {/* rupay tab content*/}
+                        <div className="mt-4 mx-4">
+                          <div className="text-center">
+                            <h5>Debit Card</h5>
+                          </div>
+                          <div className="form mt-3">
+                            <div className="inputbox">
+                            <span>Card Holder Name</span>
+                              <input type="text" name="name" id="name" className="form-control"
+                              
+                              required />
+                              
+                            </div>
+                            <div className="inputbox">
+                            <span>Card Number</span>
+                              <input type="password" name="number" id="number" className="form-control"
+                               min="1"
+                               max="999"
+                              required />
+                               <i className="fa fa-eye" aria-hidden="true"></i>
+                            </div>
+                            <div className="d-flex flex-row">
+                            <div>
+                            <div className="inputbox">
+                            <span>Card Expire Date</span>
+                              <input type="month" name="number" id="number" className="form-control"
+                               min="1"
+                               max="999"
+                              required />
+                               
+                            </div>
+                            <div className="inputbox g-6">
+                            <span>CVV</span>
+                              <input type="password" name="number" id="number" className="form-control gap-3"
+                               min="1"
+                               max="999"
+                              required />
+                               
+                            </div>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
 
-                <div className="tab-contents">
-                    
+                    {/*UPI content */}
+
+                 
+                    {/*visa content */}
                 </div>
               </div>
             </div>
