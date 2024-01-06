@@ -2,6 +2,7 @@ import { Button } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import React, { useState } from "react";
 import "../Components/modal.css";
+import { useLocation, useNavigate, useNavigation } from "react-router-dom";
 
 const CheckoutPage = () => {
   const [show, setShow] = useState(false);
@@ -14,6 +15,18 @@ const CheckoutPage = () => {
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
+
+
+  //direct to home page
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
+  const handleOrderConfirm = () => {
+    alert("Your Order Placed Successfully")
+    localStorage.removeItem("cart");
+    navigate(from,{replace: true})
+  }
   return (
     <div className="modalCard">
       <Button variant="primary" className="py-2" onClick={handleShow}>
@@ -115,17 +128,18 @@ const CheckoutPage = () => {
                       </div>
                       <div className="form mt-3">
                         <div className="inputbox">
-                          <span>Card Holder Name</span>
+                          
                           <input
                             type="text"
                             name="name"
                             id="name"
                             className="form-control"
                             required
+                            placeholder="Card Holder Name"
                           />
                         </div>
                         <div className="inputbox">
-                          <span>Card Number</span>
+                          
                           <input
                             type="password"
                             name="number"
@@ -134,12 +148,13 @@ const CheckoutPage = () => {
                             min="1"
                             max="999"
                             required
+                            placeholder="Card Number"
                           />
                           <i className="fa fa-eye" aria-hidden="true"></i>
                         </div>
                         <div className="d-flex flex-row">
                           <div className="inputbox">
-                            <span>Card Date MM/YY</span>
+                            
                             <input
                               type="text"
                               name="number"
@@ -148,10 +163,11 @@ const CheckoutPage = () => {
                               min="1"
                               max="999"
                               required
+                              placeholder="Card Date MM/YY"
                             />
                           </div>
                           <div className="inputbox g-6">
-                            <span>CVV</span>
+                            
                             <input
                               type="password"
                               name="number"
@@ -160,11 +176,12 @@ const CheckoutPage = () => {
                               min="1"
                               max="999"
                               required
+                              placeholder="CVV"
                             />
                           </div>
                         </div>
                         <div className="px-5 pay">
-                          <button className="btn btn-success btn-block">
+                          <button className="btn btn-success btn-block" onClick={handleOrderConfirm}>
                             Order
                           </button>
                         </div>
@@ -188,17 +205,18 @@ const CheckoutPage = () => {
                       </div>
                       <div className="form mt-3">
                         <div className="inputbox">
-                          <span>Enter Your Name</span>
+                          
                           <input
                             type="text"
                             name="name"
                             id="name"
                             className="form-control"
                             required
+                            placeholder="Enter Your Name"
                           />
                         </div>
                         <div className="inputbox">
-                          <span>Enter UPI ID</span>
+                          
                           <input
                             type="text"
                             name="number"
@@ -207,12 +225,13 @@ const CheckoutPage = () => {
                             min="1"
                             max="999"
                             required
+                            placeholder="Enter UPI ID"
                           />
                           <i className="fa fa-eye" aria-hidden="true"></i>
                         </div>
 
                         <div className="px-5 pay">
-                          <button className="btn btn-success btn-block">
+                          <button className="btn btn-warning btn-block" onClick={handleOrderConfirm}>
                             Create Payment
                           </button>
                         </div>
@@ -234,17 +253,18 @@ const CheckoutPage = () => {
                       </div>
                       <div className="form mt-3">
                         <div className="inputbox">
-                          <span>Card Holder Name</span>
+                          
                           <input
                             type="text"
                             name="name"
                             id="name"
                             className="form-control"
                             required
+                            placeholder="Card Holder Name"
                           />
                         </div>
                         <div className="inputbox">
-                          <span>Card Number</span>
+                          
                           <input
                             type="password"
                             name="number"
@@ -253,12 +273,13 @@ const CheckoutPage = () => {
                             min="1"
                             max="999"
                             required
+                            placeholder="Card Number"
                           />
                           <i className="fa fa-eye" aria-hidden="true"></i>
                         </div>
                         <div className="d-flex flex-row">
                           <div className="inputbox">
-                            <span>Card Date MM/YY</span>
+                            
                             <input
                               type="text"
                               name="number"
@@ -267,10 +288,11 @@ const CheckoutPage = () => {
                               min="1"
                               max="999"
                               required
+                              placeholder="Card Date MM/YY"
                             />
                           </div>
                           <div className="inputbox g-6">
-                            <span>CVV</span>
+                            
                             <input
                               type="password"
                               name="number"
@@ -279,11 +301,12 @@ const CheckoutPage = () => {
                               min="1"
                               max="999"
                               required
+                              placeholder="CVV"
                             />
                           </div>
                         </div>
                         <div className="px-5 pay">
-                          <button className="btn btn-success btn-block">
+                          <button className="btn btn-primary btn-block" onClick={handleOrderConfirm}>
                             Order
                           </button>
                         </div>
