@@ -8,7 +8,9 @@ Using React Js
 DEMO ---->
 ---------------------
 
-![image]()
+![image](https://github.com/thakordixit567/DIX-STORE/blob/master/DIX-STORE-PRO/src/DEMO/Screenshot%20(201).png)
+
+![image](https://github.com/thakordixit567/DIX-STORE/blob/master/DIX-STORE-PRO/src/DEMO/Screenshot%20(203).png)
 
 How to clone this peoject in your machine 
 
